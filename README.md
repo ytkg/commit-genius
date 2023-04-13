@@ -1,5 +1,7 @@
 # Commit Genius
 
+[![release](https://img.shields.io/github/v/tag/ytkg/commit-genius?label=release&logo=deno)](https://deno.land/x/commit_genius)
+
 ## Install
 ```bash
 $ deno install --allow-env --allow-run --allow-net https://deno.land/x/commit_genius/cg.ts
