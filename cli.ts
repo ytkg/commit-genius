@@ -1,7 +1,7 @@
-import { Command } from "./deps.ts"
+import { Command } from "./deps.ts";
 import { getDiffText } from "./lib/get_diff_text.ts";
 import { getCommitMessageSuggestion } from "./lib/get_commit_message_suggestion.ts";
-import { VERSION } from "./version.ts"
+import { VERSION } from "./version.ts";
 
 new Command()
   .name("cg")
