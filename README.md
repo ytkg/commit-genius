@@ -1,6 +1,7 @@
 # Commit Genius
 
 [![release](https://img.shields.io/github/v/tag/ytkg/commit-genius?label=release&logo=deno)](https://deno.land/x/commit_genius)
+[![release](https://img.shields.io/badge/license-MIT-brightgreen)](https://opensource.org/license/mit/)
 
 ## Install
 ```bash
@@ -22,3 +23,6 @@ Possible commit message suggestions:
 - Added feature X to component Y (コンポーネントYに機能Xを追加した)
 - Refactored function Z for improved performance (機能Zのリファクタリングによるパフォーマンス改善)
 ```
+
+## License
+The source code is licensed MIT.
