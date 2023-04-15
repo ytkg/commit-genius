@@ -17,14 +17,8 @@ $ export OPENAI_ACCESS_TOKEN=sk-HogehogeXXX
 
 $ git add .
 $ cg
-1. Added new feature
-2. Fixed bug in XYZ module
-3. Refactored code for better performance
-4. Improved user interface
-5. Added documentation for function ABC
-6. Removed unused code
-7. Updated dependencies
-8. Fixed typo in README file
-9. Implemented new design
-10. Added support for new platform
+Possible commit message suggestions:
+- Fixed bug in getCommitMessageSuggestion function (getCommitMessageSuggestion関数中のバグを修正)
+- Added feature X to component Y (コンポーネントYに機能Xを追加した)
+- Refactored function Z for improved performance (機能Zのリファクタリングによるパフォーマンス改善)
 ```
