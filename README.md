@@ -1,6 +1,7 @@
 # Commit Genius
 
 [![release](https://img.shields.io/github/v/tag/ytkg/commit-genius?label=release&logo=deno)](https://deno.land/x/commit_genius)
+[![ci](https://github.com/ytkg/commit-genius/actions/workflows/ci.yml/badge.svg)](https://github.com/ytkg/commit-genius/actions/workflows/ci.yml)
 [![release](https://img.shields.io/badge/license-MIT-brightgreen)](https://opensource.org/license/mit/)
 
 ## Install
