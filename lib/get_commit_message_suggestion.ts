@@ -16,7 +16,7 @@ export const getCommitMessageSuggestion = async (
     - commit messages 1 (日本語訳1)
     - commit messages 2 (日本語訳2)
     - commit messages 3 (日本語訳3)
-  `
+  `;
 
   const chatCompletion = await openAI.createChatCompletion({
     model: "gpt-3.5-turbo",
