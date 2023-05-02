@@ -9,8 +9,13 @@ new Command()
   .env("OPENAI_ACCESS_TOKEN=<value:string>", "OPENAI ACCESS TOKEN")
   .env("OPENAI_API_KEY=<value:string>", "OPENAI API KEY")
   .action(async (options) => {
-    if(options.openaiAccessToken === undefined && options.openaiApiKey === undefined) {
-      throw new ValidationError("Any of the environment variables are required")
+    if (
+      options.openaiAccessToken === undefined &&
+      options.openaiApiKey === undefined
+    ) {
+      throw new ValidationError(
+        "Any of the environment variables are required",
+      );
     }
 
     const apiKey = options.openaiAccessToken || options.openaiApiKey;
