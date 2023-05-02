@@ -1,11 +1,12 @@
 export const getDiffText = async (): Promise<string> => {
-  const process = Deno.run({
-    cmd: ["git", "diff", "--cached"],
+  const command = new Deno.Command("git", {
+    args: ["diff", "--cached"],
     stdout: "piped",
+    stderr: "piped",
   });
 
-  const output = await process.output();
-  const diffText = new TextDecoder().decode(output);
+  const { stdout } = command.outputSync();
+  const diffText = new TextDecoder().decode(stdout);
 
   return diffText;
 };
