@@ -5,7 +5,7 @@ export const getDiffText = async (): Promise<string> => {
     stderr: "piped",
   });
 
-  const { stdout } = command.outputSync();
+  const { stdout } = await command.output();
   const diffText = new TextDecoder().decode(stdout);
 
   return diffText;
