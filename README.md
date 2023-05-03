@@ -6,7 +6,7 @@
 
 ## Install
 ```bash
-$ deno install --allow-env --allow-run --allow-net https://deno.land/x/commit_genius/cg.ts
+$ deno install --allow-env --allow-run --allow-net --allow-read https://deno.land/x/commit_genius/cg.ts
 ✅ Successfully installed cg
 
 $ cg --version

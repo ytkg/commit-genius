@@ -1,4 +1,10 @@
-import { Command, EnumType, ValidationError } from "../deps.ts";
+import {
+  Command,
+  DenoLandProvider,
+  EnumType,
+  UpgradeCommand,
+  ValidationError,
+} from "../deps.ts";
 import { getDiffText } from "../lib/get_diff_text.ts";
 import { getCommitMessageSuggestion } from "../lib/get_commit_message_suggestion.ts";
 
@@ -32,6 +38,15 @@ export class MainCommand extends Command {
         );
 
         console.log(commitMessageSuggestion);
-      });
+      })
+      .command(
+        "upgrade",
+        new UpgradeCommand({
+          main: "cg.ts",
+          args: ["--allow-env", "--allow-run", "--allow-net", "--allow-read"],
+          provider: new DenoLandProvider({ name: "commit_genius" }),
+        }),
+      )
+      .reset();
   }
 }

@@ -15,6 +15,10 @@ Deno.test("help command", () => {
 
     -m, --model  <model>  - Model Type  (Default: "gpt-3.5-turbo", Values: "gpt-3.5-turbo", "gpt-4")
 
+  Commands:
+
+    upgrade  - Upgrade cg executable to latest or given version.
+
   Environment variables:
 
     OPENAI_ACCESS_TOKEN  <value>  - OPENAI ACCESS TOKEN  
