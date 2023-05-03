@@ -5,9 +5,6 @@ import { getCommitMessageSuggestion } from "../lib/get_commit_message_suggestion
 export class MainCommand extends Command {
   constructor() {
     super();
-
-    const modelType = new EnumType(["gpt-3.5-turbo", "gpt-4"]);
-
     this.name("cg")
       .env("OPENAI_ACCESS_TOKEN=<value:string>", "OPENAI ACCESS TOKEN")
       .env("OPENAI_API_KEY=<value:string>", "OPENAI API KEY")
