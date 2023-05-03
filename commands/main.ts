@@ -11,7 +11,7 @@ export class MainCommand extends Command {
     this.name("cg")
       .env("OPENAI_ACCESS_TOKEN=<value:string>", "OPENAI ACCESS TOKEN")
       .env("OPENAI_API_KEY=<value:string>", "OPENAI API KEY")
-      .type("model-type", modelType)
+      .type("model-type", new EnumType(["gpt-3.5-turbo", "gpt-4"]))
       .option("-m --model <model:model-type>", "Model Type", {
         default: "gpt-3.5-turbo" as const,
       })
