@@ -3,6 +3,7 @@ import { OpenAI } from "../deps.ts";
 export const getCommitMessageSuggestion = async (
   openaiAccessToken: string,
   diffText: string,
+  model: "gpt-3.5-turbo" | "gpt-4",
 ): Promise<string> => {
   const openAI = new OpenAI(openaiAccessToken);
 
@@ -19,7 +20,7 @@ export const getCommitMessageSuggestion = async (
   `;
 
   const chatCompletion = await openAI.createChatCompletion({
-    model: "gpt-3.5-turbo",
+    model: model,
     messages: [
       {
         "role": "system",
