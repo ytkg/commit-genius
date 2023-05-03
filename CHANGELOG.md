@@ -1,5 +1,12 @@
 # Changelog
 
+## [v0.4.0](https://github.com/ytkg/commit-genius/compare/v0.3.0...v0.4.0) - 2023-05-03
+- Exit with error code if no diff text is retrieved by @ytkg in https://github.com/ytkg/commit-genius/pull/11
+- Add MainCommand class to handle cg command logic by @ytkg in https://github.com/ytkg/commit-genius/pull/12
+- Add a job to run tests in the CI workflow by @ytkg in https://github.com/ytkg/commit-genius/pull/14
+- Add support for selecting model type by @swfz in https://github.com/ytkg/commit-genius/pull/16
+- Add upgrade command by @ytkg in https://github.com/ytkg/commit-genius/pull/17
+
 ## [v0.3.0](https://github.com/ytkg/commit-genius/compare/v0.2.0...v0.3.0) - 2023-05-02
 - Add CI workflow by @ytkg in https://github.com/ytkg/commit-genius/pull/8
 - Add support for OPENAI_API_KEY environment variable by @swfz in https://github.com/ytkg/commit-genius/pull/10
