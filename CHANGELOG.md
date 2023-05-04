@@ -1,5 +1,8 @@
 # Changelog
 
+## [v0.4.1](https://github.com/ytkg/commit-genius/compare/v0.4.0...v0.4.1) - 2023-05-04
+- Implement error handling for OpenAI Chat completions by @ytkg in https://github.com/ytkg/commit-genius/pull/18
+
 ## [v0.4.0](https://github.com/ytkg/commit-genius/compare/v0.3.0...v0.4.0) - 2023-05-03
 - Exit with error code if no diff text is retrieved by @ytkg in https://github.com/ytkg/commit-genius/pull/11
 - Add MainCommand class to handle cg command logic by @ytkg in https://github.com/ytkg/commit-genius/pull/12
