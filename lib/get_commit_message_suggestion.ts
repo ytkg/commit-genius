@@ -1,4 +1,11 @@
 import { OpenAI } from "../deps.ts";
+import { ChatCompletion } from "https://deno.land/x/openai@1.3.0/mod.ts";
+
+interface CustomChatCompletion extends ChatCompletion {
+  error: {
+    message: string;
+  };
+}
 
 export const getCommitMessageSuggestion = async (
   openaiAccessToken: string,
@@ -19,16 +26,22 @@ export const getCommitMessageSuggestion = async (
     - commit messages 3 (日本語訳3)
   `;
 
-  const chatCompletion = await openAI.createChatCompletion({
+  const options = {
     model: model,
     messages: [
-      {
-        "role": "system",
-        "content": systemContent,
-      },
+      { "role": "system", "content": systemContent },
       { "role": "user", "content": `${diffText}` },
     ],
-  });
+  };
+
+  const chatCompletion = await openAI.createChatCompletion(
+    options,
+  ) as CustomChatCompletion;
+
+  if (chatCompletion.error) {
+    console.log(chatCompletion.error.message);
+    Deno.exit(1);
+  }
 
   return chatCompletion.choices[0].message.content;
 };
