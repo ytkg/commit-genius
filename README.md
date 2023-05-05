@@ -7,7 +7,7 @@
 ## Installation
 ### Install
 ```bash
-$ deno install --allow-env --allow-run --allow-net --allow-read https://deno.land/x/commit_genius/cg.ts
+$ deno install --allow-env --allow-run --allow-net --allow-read --allow-write https://deno.land/x/commit_genius/cg.ts
 ✅ Successfully installed cg
 
 $ cg --version
@@ -22,6 +22,7 @@ $ cg upgrade
 ### Uninstall
 ```bash
 $ deno uninstall cg
+$ rm -rf ~/.config/commit_genius # if any config file
 ```
 
 ## Usage

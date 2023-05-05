@@ -17,6 +17,7 @@ Deno.test("help command", () => {
 
   Commands:
 
+    config   - Display or change configuration settings for cg. 
     upgrade  - Upgrade cg executable to latest or given version.
 
   Environment variables:
