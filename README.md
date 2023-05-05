@@ -4,13 +4,24 @@
 [![ci](https://github.com/ytkg/commit-genius/actions/workflows/ci.yml/badge.svg)](https://github.com/ytkg/commit-genius/actions/workflows/ci.yml)
 [![release](https://img.shields.io/badge/license-MIT-brightgreen)](https://opensource.org/license/mit/)
 
-## Install
+## Installation
+### Install
 ```bash
 $ deno install --allow-env --allow-run --allow-net --allow-read https://deno.land/x/commit_genius/cg.ts
 ✅ Successfully installed cg
 
 $ cg --version
 cg v0.1.0
+```
+
+### Upgrade
+```bash
+$ cg upgrade
+```
+
+### Uninstall
+```bash
+$ deno uninstall cg
 ```
 
 ## Usage
