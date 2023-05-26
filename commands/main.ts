@@ -7,6 +7,7 @@ import {
 } from "../deps.ts";
 import { getDiffText } from "../lib/get_diff_text.ts";
 import { getCommitMessageSuggestion } from "../lib/get_commit_message_suggestion.ts";
+import { loadConfig } from "../lib/load_config.ts";
 import { ConfigCommand } from "./config.ts";
 
 export class MainCommand extends Command {
@@ -23,7 +24,9 @@ export class MainCommand extends Command {
         default: "gpt-3.5-turbo" as const,
       })
       .action(async (options) => {
-        const apiKey = options.openaiAccessToken || options.openaiApiKey;
+        const config = await loadConfig();
+        const apiKey = options.openaiAccessToken || options.openaiApiKey ||
+          config.api_key as string;
 
         if (apiKey === undefined) {
           throw new ValidationError(
