@@ -7,6 +7,8 @@ import {
 } from "../deps.ts";
 import { getDiffText } from "../lib/get_diff_text.ts";
 import { getCommitMessageSuggestion } from "../lib/get_commit_message_suggestion.ts";
+import { loadConfig } from "../lib/load_config.ts";
+import { ConfigCommand } from "./config.ts";
 
 export class MainCommand extends Command {
   constructor() {
@@ -22,7 +24,9 @@ export class MainCommand extends Command {
         default: "gpt-3.5-turbo" as const,
       })
       .action(async (options) => {
-        const apiKey = options.openaiAccessToken || options.openaiApiKey;
+        const config = await loadConfig();
+        const apiKey = options.openaiAccessToken || options.openaiApiKey ||
+          config.api_key;
 
         if (apiKey === undefined) {
           throw new ValidationError(
@@ -39,11 +43,18 @@ export class MainCommand extends Command {
 
         console.log(commitMessageSuggestion);
       })
+      .command("config", new ConfigCommand())
       .command(
         "upgrade",
         new UpgradeCommand({
           main: "cg.ts",
-          args: ["--allow-env", "--allow-run", "--allow-net", "--allow-read"],
+          args: [
+            "--allow-env",
+            "--allow-run",
+            "--allow-net",
+            "--allow-read",
+            "--allow-write",
+          ],
           provider: new DenoLandProvider({ name: "commit_genius" }),
         }),
       )

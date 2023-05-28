@@ -7,7 +7,7 @@
 ## Installation
 ### Install
 ```bash
-$ deno install --allow-env --allow-run --allow-net --allow-read https://deno.land/x/commit_genius/cg.ts
+$ deno install --allow-env --allow-run --allow-net --allow-read --allow-write https://deno.land/x/commit_genius/cg.ts
 ✅ Successfully installed cg
 
 $ cg --version
@@ -22,11 +22,14 @@ $ cg upgrade
 ### Uninstall
 ```bash
 $ deno uninstall cg
+$ rm -rf ~/.config/commit_genius # if any config file
 ```
 
 ## Usage
 ```bash
 $ export OPENAI_ACCESS_TOKEN=sk-HogehogeXXX
+$ # or
+$ cg config set api_key sk-HogehogeXXX
 
 $ git add .
 $ cg
@@ -34,6 +37,24 @@ Possible commit message suggestions:
 - Fixed bug in getCommitMessageSuggestion function (getCommitMessageSuggestion関数中のバグを修正)
 - Added feature X to component Y (コンポーネントYに機能Xを追加した)
 - Refactored function Z for improved performance (機能Zのリファクタリングによるパフォーマンス改善)
+```
+
+### Configure
+#### Update configuration with a value for the given key
+```bash
+$ cg config set api_key sk-HogehogeXXX
+```
+
+#### Print the value of a given configuration key
+```bash
+$ cg config get api_key
+sk-HogehogeXXX
+```
+
+#### Print a list of configuration keys and values
+```bash
+$ cg config list
+api_key = sk-HogehogeXXX
 ```
 
 ## License
