@@ -26,7 +26,7 @@ export class MainCommand extends Command {
       .action(async (options) => {
         const config = await loadConfig();
         const apiKey = options.openaiAccessToken || options.openaiApiKey ||
-          config.api_key as string;
+          config.api_key;
 
         if (apiKey === undefined) {
           throw new ValidationError(
