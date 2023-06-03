@@ -57,5 +57,10 @@ $ cg config list
 api_key = sk-HogehogeXXX
 ```
 
+| Key     | Description                                            |
+|---------|--------------------------------------------------------|
+| api_key | API key used for authentication with OpenAI            |
+| model   | model name for OpenAI (e.g., `gpt-3.5-turbo`, `gpt-4`) |
+
 ## License
 The source code is licensed MIT.

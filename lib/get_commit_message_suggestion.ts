@@ -1,5 +1,6 @@
 import { OpenAI } from "../deps.ts";
 import { ChatCompletion } from "https://deno.land/x/openai@1.3.0/mod.ts";
+import { Model } from "../types.d.ts";
 
 interface CustomChatCompletion extends ChatCompletion {
   error: {
@@ -10,7 +11,7 @@ interface CustomChatCompletion extends ChatCompletion {
 export const getCommitMessageSuggestion = async (
   openaiAccessToken: string,
   diffText: string,
-  model: "gpt-3.5-turbo" | "gpt-4",
+  model: Model,
 ): Promise<string> => {
   const openAI = new OpenAI(openaiAccessToken);
 

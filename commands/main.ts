@@ -20,9 +20,7 @@ export class MainCommand extends Command {
       .env("OPENAI_ACCESS_TOKEN=<value:string>", "OPENAI ACCESS TOKEN")
       .env("OPENAI_API_KEY=<value:string>", "OPENAI API KEY")
       .type("model-type", modelType)
-      .option("-m --model <model:model-type>", "Model Type", {
-        default: "gpt-3.5-turbo" as const,
-      })
+      .option("-m --model <model:model-type>", "Model name")
       .action(async (options) => {
         const config = await loadConfig();
         const apiKey = options.openaiAccessToken || options.openaiApiKey ||
@@ -35,10 +33,11 @@ export class MainCommand extends Command {
         }
 
         const diffText = await getDiffText();
+        const model = options.model || config.model || "gpt-3.5-turbo";
         const commitMessageSuggestion = await getCommitMessageSuggestion(
           apiKey,
           diffText,
-          options.model,
+          model,
         );
 
         console.log(commitMessageSuggestion);
