@@ -1,9 +1,5 @@
 import { exists, parse } from "../deps.ts";
-
-type Config = {
-  api_key?: string;
-  [key: string]: string | undefined;
-};
+import { Config } from "../types.d.ts";
 
 export const loadConfig = async (): Promise<Config> => {
   const filePath = `${Deno.env.get("HOME")}/.config/commit_genius/config.toml`;

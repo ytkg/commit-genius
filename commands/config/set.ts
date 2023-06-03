@@ -6,7 +6,7 @@ export class SetCommand extends Command {
   constructor() {
     super();
     this.description("Update configuration with a value for the given key")
-      .type("config", new EnumType(["api_key"]))
+      .type("config", new EnumType(["api_key", "model"]))
       .arguments("<key:config> <value:string>")
       .action(async (_, key, value) => {
         const config = await loadConfig();
