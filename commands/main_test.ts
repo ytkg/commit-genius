@@ -13,7 +13,8 @@ Deno.test("help command", () => {
 
   Options:
 
-    -m, --model  <model>  - Model name  (Values: "gpt-3.5-turbo", "gpt-4")
+    -m, --model  <model>  - Model name       (Values: "gpt-3.5-turbo", "gpt-4")
+    -d, --debug           - Print debug log                                    
 
   Commands:
 

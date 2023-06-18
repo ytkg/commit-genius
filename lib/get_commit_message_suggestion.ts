@@ -12,6 +12,7 @@ export const getCommitMessageSuggestion = async (
   openaiAccessToken: string,
   diffText: string,
   model: Model,
+  debug: boolean | undefined,
 ): Promise<string> => {
   const openAI = new OpenAI(openaiAccessToken);
 
@@ -42,6 +43,14 @@ export const getCommitMessageSuggestion = async (
   if (chatCompletion.error) {
     console.log(chatCompletion.error.message);
     Deno.exit(1);
+  }
+
+  if (debug) {
+    const { prompt_tokens, completion_tokens, total_tokens } =
+      chatCompletion.usage;
+    console.log(
+      `prompt_tokens: ${prompt_tokens}, completion_tokens: ${completion_tokens}, total_tokens: ${total_tokens}\n`,
+    );
   }
 
   return chatCompletion.choices[0].message.content;
