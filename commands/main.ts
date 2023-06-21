@@ -21,6 +21,7 @@ export class MainCommand extends Command {
       .env("OPENAI_API_KEY=<value:string>", "OPENAI API KEY")
       .type("model-type", modelType)
       .option("-m --model <model:model-type>", "Model name")
+      .option("-d, --debug", "Print debug log")
       .action(async (options) => {
         const config = await loadConfig();
         const apiKey = options.openaiAccessToken || options.openaiApiKey ||
@@ -38,6 +39,7 @@ export class MainCommand extends Command {
           apiKey,
           diffText,
           model,
+          options.debug,
         );
 
         console.log(commitMessageSuggestion);
