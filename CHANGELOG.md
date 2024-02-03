@@ -1,5 +1,10 @@
 # Changelog
 
+## [v0.5.1](https://github.com/ytkg/commit-genius/compare/v0.5.0...v0.5.1) - 2024-02-03
+- Add debug option by @ytkg in https://github.com/ytkg/commit-genius/pull/24
+- Create dependabot.yml by @ytkg in https://github.com/ytkg/commit-genius/pull/26
+- Bump actions/checkout from 3 to 4 by @dependabot in https://github.com/ytkg/commit-genius/pull/27
+
 ## [v0.5.0](https://github.com/ytkg/commit-genius/compare/v0.4.1...v0.5.0) - 2023-06-03
 - Include upgrade and uninstall options in installation instructions by @ytkg in https://github.com/ytkg/commit-genius/pull/20
 - Add config command by @ytkg in https://github.com/ytkg/commit-genius/pull/22
